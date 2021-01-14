@@ -1,7 +1,7 @@
 ---
 title: "Environments and packages"
-teaching: 10
-exercises: 5
+teaching: 5
+exercises: 0
 questions:
 - "How can I install packages to be accessible during the workshop?"
 objectives:
