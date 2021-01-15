@@ -36,7 +36,7 @@ When prompted, save the key in the default location by pressing Return, and then
 
 > ## SSH key passwords
 >
-> While you may have previously used SSH keys withou a password at all for maximal convenience, this creates security holes where anyone who can access a machine that has your private key can jump to any other machine you have access to. This led to the compromise of many UK supercomputers in 2020 to run Bitcoin mining software and potentially steal confidential research data. Supercomputing Wales requires that all private keys used to access the machine be protected by a password.
+> While you may have previously used SSH keys without a password at all for maximal convenience, this creates security holes where anyone who can access a machine that has your private key can jump to any other machine you have access to. This led to the compromise of many UK supercomputers in 2020 to run Bitcoin mining software and potentially steal confidential research data. Supercomputing Wales requires that all private keys used to access the machine be protected by a password.
 {: .callout}
 
 You now have (at least) two files in your `~/.ssh` directory: `id_rsa` and `id_rsa.pub`. `id_rsa` is your private key, and should **never** be shared with anyone. Ideally you should never even view it on screen, or copy it to any other machines. Anyone with this key (and the password for it) can log in to any machines you have access to as if they were you.

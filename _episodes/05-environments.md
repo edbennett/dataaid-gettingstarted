@@ -15,7 +15,7 @@ The default "Python 3" notebook Sunpyter creates uses the environment that it is
 
 ## Team kernels
 
-However, you can also see separate notebook kernels for each team. These make use of separate conda environments that have write access enabled, so you can install (and remove) packages in them.
+However, you can also see separate notebook kernels for each team. These make use of separate Conda environments that have write access enabled, so you can install (and remove) packages in them.
 
 Because installing packages requires an internet connection, and there is no internet connection on any of Sunbird's compute nodes, you will need to log in to Sunbird in order to make changes. To activate the environment to make changes, in a new terminal on your own machine:
 
@@ -34,7 +34,7 @@ Now, you can use `conda install`, or `pip install`, as you prefer, to manage the
 
 If you want, you can also create your own Conda environments and make use of them within Sunpyter.
 
-To create a Conda environment, follow the instructions at the [Supercomputing Wales tutoral](https://supercomputingwales.github.io/SCW-tutorial). Then, with this environment active, install the `ipykernel` package, and then run
+To create a Conda environment, follow the instructions at the [Supercomputing Wales tutorial](https://supercomputingwales.github.io/SCW-tutorial). Then, with this environment active, install the `ipykernel` package, and then run
 
 ~~~
 $ python -m ipykernel install --user --name=myEnv
