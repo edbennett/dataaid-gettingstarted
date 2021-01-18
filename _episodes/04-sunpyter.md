@@ -8,7 +8,7 @@ objectives:
 - "Be able to launch a Jupyter notebook via Sunpyter"
 keypoints:
 - "Use Sunpyter to launch a Jupyter notebook server on the CDT compute nodes"
-- "Sunpyter is available from [GitHub][sunpyter]"
+- "Sunpyter is available from [GitHub][sunpyter], where there is also a README with more troubleshooting information"
 ---
 
 A common way to use Python to interact with data is via a Jupyter notebook. This combines documentation, code, and output into a single document, viewable via a web browser.
@@ -77,5 +77,9 @@ Once you're finished with Jupyter, then you can return to the terminal and press
 >
 > By default, Sunpyter only allocates 1 CPU for the notebook server. This is because we only have 80 CPU cores across the two CDT nodes, which need to be shared between everyone at the event. If you find during the event that your software is not running quickly enough and would be able to take advantage of multiple cores, then speak to one of the RSEs and we will help identify the best way to scale your resources up without adversely impacting your teammates and the other teams. 
 {: .callout}
+
+## Troubleshooting
+
+If you encounter difficulties with Sunpyter, first of all, try a `git pull` of the repository to ensure that you are running the most recent version&mdash;we are regularly updating Sunpyter as we identify areas for improvement, and may have already fixed the issue you are encountering. The next place to check for information is the README, which can be viewed [at the GitHub repository][sunpyter], and is also included in the repository when downloaded. In particular, the "Troubleshooting" section at the bottom has answers to some commonly-encountered issues, and is regularly updated with new issues and fixes as we become aware of them. If your issue is not listed there, then please ask on Slack and the RSE team will help you get things working correctly.
 
 [sunpyter]: https://github.com/sa2c/sunpyter
