@@ -97,6 +97,8 @@ You should be let straight in.
 {: .callout}
 
 Now, we also need to be able to connect to the CDT gateway server, as the CDT storage is not accessible from the Sunbird login node.
+In a new terminal (running on your own machine),
+we can copy the public key to the gateway server.
 
 ~~~
 $ ssh-copy-id -i ~/.ssh/id_rsa your.scw.username@sa2c-backup2.swansea.ac.uk
