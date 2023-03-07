@@ -18,7 +18,8 @@ SSH keys allow you to authenticate to a service without needing to send a passwo
 
 ## Creating a key pair 
 
-You may already have an SSH key on your machine. To check this, open a shell and run:
+You may already have an SSH key on your machine.
+To check this, open a shell (Git Bash if you are on Windows) and run:
 
 ~~~
 $ ls ~/.ssh/id_rsa
@@ -87,7 +88,8 @@ $ ssh your.scw.username@sunbird.swansea.ac.uk
 ~~~
 {: .language-bash}
 
-Again, replace `your.scw.username` with your username for the Supercomputing Wales services. You should be let straight in. Once you're successfully logged in, you can log out again with Ctrl+D or `exit`.
+Again, replace `your.scw.username` with your username for the Supercomputing Wales services.
+You should be let straight in.
 
 > ## Multiple sessions
 >
@@ -97,7 +99,7 @@ Again, replace `your.scw.username` with your username for the Supercomputing Wal
 Now, we also need to be able to connect to the CDT gateway server, as the CDT storage is not accessible from the Sunbird login node.
 
 ~~~
-$ ssh-copy-id -i ~/.ssh/id_rsa your.scw.username@137.44.249.154
-$ ssh your.scw.username@137.44.249.154 
+$ ssh-copy-id -i ~/.ssh/id_rsa your.scw.username@sa2c-backup2.swansea.ac.uk
+$ ssh your.scw.username@sa2c-backup2.swansea.ac.uk
 ~~~
 {: .language-bash}
