@@ -20,9 +20,22 @@ All the files we will work with for this event are located on the CDT storage, w
 
 Important places:
 
-* `/cdt_storage/your.scw.username` - your home directory on the CDT gateway node, and a place for you to work privately during the event.
-* `/cdt_storage/ChanceToShine`, `/cdt_storage/DianaAward`, `/cdt_storage/Fairtrade` - the data provided by the charities. These directories are read-only, to avoid accidentally modifying/deleting the data during the event, as raw data should not be modified. Under the confidentiality agreement we have signed with the charities, these directories (and their contents) **must not** be copied out of the `/CDT_storage` directory, either to other Sunbird storage (`/home`, `/scratch`) or to your own computer.
-* `/cdt_storage/scw1738` - a shared directory for everyone attending the event to collaborate. This contains subdirectories for each of the charities.
+* `/cdt_storage/your.scw.username` &ndash;
+  your home directory on the CDT gateway node,
+  and a place for you to work privately during the event.
+* `/cdt_storage/inkinddirect`,
+  `/cdt_storage/magicbreakfast`,
+  `/cdt_storage/sudep` &ndash;
+  the data provided by the charities.
+  These directories are read-only,
+  to avoid accidentally modifying/deleting the data during the event&mdash;a
+  general principle of data analysis is to not modify raw data.
+  Under the confidentiality agreement we have signed with the charities,
+  these directories (and their contents) **must not** be copied out of the `/CDT_storage` directory,
+  either to other Sunbird storage (`/home`, `/scratch`) or to your own computer.
+* `/cdt_storage/scw1738` &ndash;
+  a shared directory for everyone attending the event to collaborate.
+  This contains subdirectories for each of the charities.
 
 ## Getting stuff in and out
 
