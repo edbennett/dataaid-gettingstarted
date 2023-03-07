@@ -44,7 +44,7 @@ Important places:
 git is the recommended way to manage your code, and to pull in existing repositories. To activate git on the CDT gateway node, use the command
 
 ~~~
-$ source /cdt_storage/s.michele.mesiti/activate-git.sh
+$ source /cdt_storage/s.e.j.bennett/activate-git.sh
 ~~~
 {: .language-bash}
 
