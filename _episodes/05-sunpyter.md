@@ -15,25 +15,55 @@ A common way to use Python to interact with data is via a Jupyter notebook. This
 
 In general, supercomputing centres like their machines to be busy 100% of the time&mdash;otherwise, they could have bought a smaller machine and spent less money. However, the Jupyter notebook method of doing research is interactive, and so spends significant amounts of time idle, doing nothing, and also needs to be available on demand whenever a user wants to use it, meaning that a pool of nodes would need to be kept idle, rather than helping to make progress on the queue of jobs waiting for resources. This tension between what some researchers need and what the most efficient way to use the hardware resource is, is a tension that many supercomputing centres are trying to resolve.
 
-While a final solution is still yet to arrive, for the time being we have developed a workaround called Sunpyter. Sunpyter automatically requests that the Sunbird queue manager allocates some compute resources on the CDT compute nodes, launches the Jupyter notebook server on these resources, creates a tunnel allowing your computer to connect to the notebook server running on the compute node, and then releases the resources when you terminate the process.
+While a final solution is still yet to arrive,
+for the time being we have developed a workaround called Sunpyter.
+Sunpyter automatically requests that the Sunbird queue manager allocates some compute resources,
+launches the Jupyter notebook server on these resources,
+creates a tunnel allowing your computer to connect to the notebook server running on the compute node,
+and then releases the resources when you terminate the process.
 
-Sunpyter is available from [GitHub][sunpyter]. Because currently the Sunpyter repository contains some private information specific to this event, the repository is private on GitHub; if you do not already have access, then raise a hand and let us know so we can add you.
-
-Clone the repository to your local computer (not to the CDT gateway node). You can do this with HTTPS, or if you've already set up SSH keys on GitHub, then you can use SSH instead:
+Sunpyter is available from [GitHub][sunpyter].
+Clone the repository to your local computer (not to the CDT gateway node).
 
 ~~~
 $ git clone https://github.com/sa2c/sunpyter
 ~~~
 {: .language-bash}
 
-_or_
+By default,
+Sunpyter is set up to work with the standard Sunbird queues,
+not the CDT-specific one we need today.
+To fix this,
+we need to update the settings in the file `remote_script.sh`.
+Using your favourite text editor,
+replace the first 15 lines of `remote_script.sh` with the following:
 
 ~~~
-$ git clone git@github.com:sa2c/sunpyter
+#!/bin/bash
+# Please specify your SCW project account (for example, scwXXXX).
+ACCOUNT=scw1738 # Use the Data Aid project account
+# Please specify the partition for running Sunpyter.
+PARTITION=s_highmem_cdt # Use the CDT nodes
+
+# This lists all the available GPU partitions on Sunbird.
+# accel_ai, accel_ai_dev, accel_ai_mig, gpu, s_gpu_eng
+# If you don't specify a GPU partition, Sunpyter will run on CPU only.
+
+# Use the conda environment created in the previous episode
+CONDA_ENV_PATH=${HOME}/.conda/envs/dataaid
+
+# Ensure the working directory is on the CDT storage.
+WORKDIR=/cdt_storage/$USER
+
+# For CPU only.
+# Please specify the number of CPU cores you need.
+NUM_CPU=1
 ~~~
 {: .language-bash}
 
-With Sunpyter downloaded, the first step is to test that it is able to connect to Sunbird without a key and do what it needs to:
+Now the settings are set,
+we can test that Sunpyter is able to connect to Sunbird without a key
+and do what it needs to:
 
 ~~~
 $ cd sunpyter
