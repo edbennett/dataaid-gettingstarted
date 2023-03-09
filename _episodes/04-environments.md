@@ -92,3 +92,40 @@ $ R
 > install.packages("tidyverse")
 ~~~
 {: .language-r}
+
+
+## Adding more packages later
+
+If you find as you are working that you need extra packages,
+you might no longer have the terminal open that you used to create the environment.
+
+To get back to where we were,
+starting from a terminal on your local machine,
+you can first reconnect to SUNBIRD:
+
+~~~
+$ ssh your.scw.username@sunbird.swansea.ac.uk
+~~~
+{: .language-bash}
+
+Then to reactivate the environment:
+
+~~~
+$ module load anaconda/2021.05
+$ source activate
+$ conad activate dataaid
+~~~
+{: .language-bash}
+
+From there we can install more packages with `conda`, `pip`, or `R`
+as we did previously.
+
+> ## Installing packages from within Jupyter
+>
+> Once we are using Sunpyter
+> (see the next section)
+> we can also open a terminal from the Jupyter main page,
+> by going to `New` > `Terminal`.
+> This will be running on the compute node on the cluster,
+> so you will be able to install packages from there.
+{: .callout}
