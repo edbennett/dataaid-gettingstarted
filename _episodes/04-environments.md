@@ -54,6 +54,14 @@ and puts them all into place.
 
 Once our environment is created,
 we have a variety of ways we can install packages into it.
+
+Since this is an entirely fresh environment,
+it won't have any of the packages that you have installed elsewhere&mdash;for
+example on your own machine,
+or in other environments on SUNBIRD.
+So if we want to use any packages outside of the standard library,
+we will need to install them.
+
 In all cases,
 we will first need to activate this environment.
 
