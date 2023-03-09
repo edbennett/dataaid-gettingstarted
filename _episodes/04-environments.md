@@ -84,7 +84,7 @@ If we are using Python,
 we can also install packages using `pip`.
 
 ~~~
-$ pip install numpy matplotlib pytorch
+$ pip install numpy matplotlib torch
 ~~~
 {: .language-bash}
 
@@ -121,7 +121,7 @@ Then to reactivate the environment:
 ~~~
 $ module load anaconda/2021.05
 $ source activate
-$ conad activate dataaid
+$ conda activate dataaid
 ~~~
 {: .language-bash}
 
