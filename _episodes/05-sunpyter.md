@@ -36,7 +36,7 @@ not the CDT-specific one we need today.
 To fix this,
 we need to update the settings in the file `remote_script.sh`.
 Using your favourite text editor,
-replace the first 15 lines of `remote_script.sh` with the following:
+replace the first 19 lines of `remote_script.sh` with the following:
 
 ~~~
 #!/bin/bash
