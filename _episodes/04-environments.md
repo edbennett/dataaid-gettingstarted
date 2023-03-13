@@ -10,7 +10,7 @@ objectives:
 - "Be able to install additional packages into this environment"
 keypoints:
 - "Use `conda create` to create a new Conda environment."
-- "Make sure to include the `jupyter` package, and `irkernel` if you want to use R."
+- "Make sure to include the `jupyter` package, and `r-irkernel` if you want to use R."
 - "Packages can be installed using `conda install`, `pip install`, or `install.packages` in R."
 ---
 
@@ -73,10 +73,10 @@ $ conda activate dataaid
 We can install packages using `conda`.
 For example,
 if we want to use R within Jupyter,
-we will need to install `r` and `irkernel`.
+we will need to install `r` and `r-irkernel`.
 
 ~~~
-$ conda install r irkernel
+$ conda install r r-irkernel
 ~~~
 {: .language-bash}
 
