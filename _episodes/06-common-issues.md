@@ -31,3 +31,14 @@ There are a couple of possible reasons for this:
       ls -ld .
 
   If you see `rwxrwxrwx`, then you are most likely running on a non-Unix filesystem. Try cloning Sunpyter into your home directory instead.
+
+## Sunpyter is stuck at "Waiting..." forever
+
+Many errors can cause this, mostly in `remote_script.sh`.
+
+Use `Ctrl+C` to break out of Sunpyter, and use
+
+    cat jupyter_log.txt
+
+to get more details on the specific error.
+
