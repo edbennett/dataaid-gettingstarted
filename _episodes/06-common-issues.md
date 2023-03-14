@@ -3,7 +3,7 @@ title: "Common issues"
 teaching: 5
 exercises: 0
 questions:
-- "What issues do people frequently encounter?
+- "What issues do people frequently encounter?"
 objectives:
 - "Be able to identify if a problem they are having has been seen before, and resolve it themselves if so"
 keypoints:
