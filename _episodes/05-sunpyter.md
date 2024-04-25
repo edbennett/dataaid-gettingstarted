@@ -8,7 +8,7 @@ objectives:
 - "Be able to launch a Jupyter notebook via Sunpyter"
 keypoints:
 - "Use Sunpyter to launch a Jupyter notebook server on the CDT compute nodes"
-- "Sunpyter is available from [GitHub][sunpyter], where there is also a README with more troubleshooting information"
+- "Sunpyter is available from [GitHub](https://github.com/sa2c/sunpyter), where there is also a README with more troubleshooting information"
 ---
 
 A common way to use Python to interact with data is via a Jupyter notebook. This combines documentation, code, and output into a single document, viewable via a web browser.
