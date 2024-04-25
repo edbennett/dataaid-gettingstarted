@@ -32,7 +32,7 @@ we need to load a module that will give us access to the `conda` command.
 We will do this in the terminal where we connected to SUNBIRD.
 
 ~~~
-$ module load anaconda/2021.05
+$ module load anaconda/2023.09
 $ source activate
 ~~~
 {: .language-bash}
@@ -119,7 +119,7 @@ $ ssh your.scw.username@sunbird.swansea.ac.uk
 Then to reactivate the environment:
 
 ~~~
-$ module load anaconda/2021.05
+$ module load anaconda/2023.09
 $ source activate
 $ conda activate dataaid
 ~~~
