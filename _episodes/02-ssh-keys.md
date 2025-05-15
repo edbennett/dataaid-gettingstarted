@@ -10,6 +10,7 @@ keypoints:
 - "SSH keys are files that authenticate you similarly to a password"
 - "SSH keys have a public and a private part; the private key must be kept private"
 - "SSH keys should be password-protected"
+- "Your university password, Supercomputing Wales password, and SSH keypassphrase are all separate things, and should usually be different to each other"
 ---
 
 When connecting to a remote machine, we use the Secure SHell protocol (SSH) to do so without leaking our private details all over the Internet. If you've been on a Supercomputing Wales course previously, then you will have used this by typing your password to connect. However, there is another option that can be more convenient, and we will need to use in order to use the Sunpyter later this morning.
@@ -64,10 +65,14 @@ At the top of the "Account Summary" box on the left is your "SCW username". Make
 
 Now, if you have not previously set a password for Supercomputing Wales, you can do this with the "Reset SCW Password" button further down the left-hand side, in the Actions box. Supercomputing Wales machines have a separate password database to the Universities, so this can (and ideally should) be a different password. Since we're using SSH keys, we will not be using this password very much, but you will need to type it in again in a minute or so.
 
-Now, we need to tell the Sunbird machine to let us in_using the key we just created. To do this, we can use the `ssh-copy-id` command.
+Rather than connecting to SUNBIRD,
+we'll now first connect to a secondary machine that has the CDT storage mounted on it.
+Before that,
+we need to tell it to let us in using the key that we just created.
+To do this, we can use the `ssh-copy-id` command.
 
 ~~~
-$ ssh-copy-id -i ~/.ssh/id_rsa your.scw.username@sunbird.swansea.ac.uk
+$ ssh-copy-id -i ~/.ssh/id_rsa your.scw.username@sa2c-backup2.swansea.ac.uk
 ~~~
 {: .language-bash}
 
@@ -84,24 +89,62 @@ $ ssh-add ~/.ssh/id_rsa
 When prompted, enter the password for your private key. This then stores the key in memory, so that you can use it without entering your password every time. To test that this has worked, try:
 
 ~~~
-$ ssh your.scw.username@sunbird.swansea.ac.uk
+$ ssh your.scw.username@sa2c-backup2.swansea.ac.uk
 ~~~
 {: .language-bash}
 
 Again, replace `your.scw.username` with your username for the Supercomputing Wales services.
 You should be let straight in.
 
+Currently,
+SUNBIRD does not allow direct connections from the public internet.
+If you have a VPN account at Swansea or Aberystwyth university,
+you can connect from the VPN.
+However,
+for our purposes,
+it's convenient to bounce our connection to SUNBIRD via
+the `sa2c-backup2` machine we logged into above.
+
+To set up our SSH client to do this,
+we can edit our SSH configuration by running,
+in a new terminal:
+
+~~~
+$ nano ~/.ssh/config
+~~~
+{: .language-bash}
+
+Add the following block to the file,
+replacing `your.scw.username` as appropriate:
+
+~~~
+Host sa2c-backup2 sa2c-backup2.swansea.ac.uk
+    HostName sa2c-backup2.swansea.ac.uk
+    User your.scw.username
+    IdentityFile ~/.ssh/id_rsa
+
+Host sunbird sunbird.swansea.ac.uk
+    HostName sunbird.swansea.ac.uk
+    User your.scw.username
+    IdentityFile ~/.ssh/id_rsa
+    ProxyJump sa2c-backup2
+~~~
+{: .output}
+
+Use `Ctrl+O`, `Enter`, `Ctrl+X` to save and exit `nano`.
+
 > ## Multiple sessions
 >
 > Note that the way we have invoked it, `ssh-agent` is specific to the current shell session, so if you open a second terminal window you'll need to open a second agent and reload and reauthenticate your key. It is possible to make one agent work across all sessions, but the setup is slightly more involved so is left as an exercise.
 {: .callout}
 
-Now, we also need to be able to connect to the CDT gateway server, as the CDT storage is not accessible from the Sunbird login node.
-In a new terminal (running on your own machine),
-we can copy the public key to the gateway server.
+Now we can request that SUNBIRD let us in using our SSH key:
 
 ~~~
-$ ssh-copy-id -i ~/.ssh/id_rsa your.scw.username@sa2c-backup2.swansea.ac.uk
-$ ssh your.scw.username@sa2c-backup2.swansea.ac.uk
+$ ssh-copy-id sunbird
+$ ssh sunbird
 ~~~
 {: .language-bash}
+
+The second command should let us straight in,
+without needing to type our Supercomputing Wales password.

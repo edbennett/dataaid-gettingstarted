@@ -32,17 +32,17 @@ we need to load a module that will give us access to the `conda` command.
 We will do this in the terminal where we connected to SUNBIRD.
 
 ~~~
-$ module load anaconda/2023.09
+$ module load anaconda/2024.06
 $ source activate
 ~~~
 {: .language-bash}
 
 With this done,
 we can now create a Conda environment called `dataaid`,
-including Python 3.10 and Jupyter.
+including Python 3.12 and Jupyter.
 
 ~~~
-$ conda create -n dataaid python=3.10 jupyter
+$ conda create -n dataaid python=3.12 jupyter
 ~~~
 {: .language-bash}
 
@@ -112,14 +112,14 @@ starting from a terminal on your local machine,
 you can first reconnect to SUNBIRD:
 
 ~~~
-$ ssh your.scw.username@sunbird.swansea.ac.uk
+$ ssh sunbird
 ~~~
 {: .language-bash}
 
 Then to reactivate the environment:
 
 ~~~
-$ module load anaconda/2023.09
+$ module load anaconda/2024.06
 $ source activate
 $ conda activate dataaid
 ~~~
