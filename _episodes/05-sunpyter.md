@@ -15,7 +15,7 @@ A common way to use Python to interact with data is via a Jupyter notebook. This
 
 In general, supercomputing centres like their machines to be busy 100% of the time&mdash;otherwise, they could have bought a smaller machine and spent less money. However, the Jupyter notebook method of doing research is interactive, and so spends significant amounts of time idle, doing nothing, and also needs to be available on demand whenever a user wants to use it, meaning that a pool of nodes would need to be kept idle, rather than helping to make progress on the queue of jobs waiting for resources. This tension between what some researchers need and what the most efficient way to use the hardware resource is, is a tension that many supercomputing centres are trying to resolve.
 
-While a final solution is still yet to arrive,
+While a complete solution is still yet to arrive,
 for the time being we have developed a workaround called Sunpyter.
 Sunpyter automatically requests that the Sunbird queue manager allocates some compute resources,
 launches the Jupyter notebook server on these resources,

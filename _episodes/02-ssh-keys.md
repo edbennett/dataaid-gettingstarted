@@ -59,11 +59,12 @@ You now have (at least) two files in your `~/.ssh` directory: `id_rsa` and `id_r
 
 ## Logging in to Supercomputing Wales
 
-Now we are ready to use SSH keys to authenticate with Supercomputing Wales. First off, we need to check our username. Visit the [My Supercomputing Wales](https://my.supercomputing.wales) service, and log in with your University credentials. (If you have more than one set, make sure to use the same ones you used in the Setup!)
-
-At the top of the "Account Summary" box on the left is your "SCW username". Make a note of this&mdash;it is likely to be the first letter of your University, followed by your University username. However, that's not guaranteed, so it's good to double-check.
-
-Now, if you have not previously set a password for Supercomputing Wales, you can do this with the "Reset SCW Password" button further down the left-hand side, in the Actions box. Supercomputing Wales machines have a separate password database to the Universities, so this can (and ideally should) be a different password. Since we're using SSH keys, we will not be using this password very much, but you will need to type it in again in a minute or so.
+Now we are ready to use SSH keys to authenticate with Supercomputing Wales. 
+To do this,
+we'll initially need your username and password.
+You should have this to hand;
+if you don't,
+raise a hand and we'll do our best to support you.
 
 Rather than connecting to SUNBIRD,
 we'll now first connect to a secondary machine that has the CDT storage mounted on it.
@@ -72,7 +73,7 @@ we need to tell it to let us in using the key that we just created.
 To do this, we can use the `ssh-copy-id` command.
 
 ~~~
-$ ssh-copy-id -i ~/.ssh/id_rsa your.scw.username@sa2c-backup2.swansea.ac.uk
+$ ssh-copy-id -i ~/.ssh/id_rsa your.scw.username@sa2c-backup.swansea.ac.uk
 ~~~
 {: .language-bash}
 

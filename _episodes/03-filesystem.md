@@ -23,8 +23,8 @@ Important places:
 * `/cdt_storage/your.scw.username` &ndash;
   your home directory on the CDT gateway node,
   and a place for you to work privately during the event.
-* `/cdt_storage/scw1738/nt-data`,
-  `/cdt_storage/scw1738/smf-data` &ndash;
+* `/cdt_storage/scw1738/bbt-data`,
+  `/cdt_storage/scw1738/t2u-data` &ndash;
   the data provided by the charities.
   These directories are read-only,
   to avoid accidentally modifying/deleting the data during the event&mdash;a
@@ -32,8 +32,8 @@ Important places:
   Under the confidentiality agreement we have signed with the charities,
   these directories (and their contents) **must not** be copied out of the `/cdt_storage` directory,
   either to other SUNBIRD storage (`/home`, `/scratch`) or to your own computer.
-* `/cdt_storage/scw1738/nt-shared`,
-  `/cdt_storage/scw1738/smf-shared` &ndash;
+* `/cdt_storage/scw1738/bbt-shared`,
+  `/cdt_storage/scw1738/t2u-shared` &ndash;
   shared directories for everyone attending the event to collaborate,
   one per charity.
 

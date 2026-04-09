@@ -42,3 +42,31 @@ Use `Ctrl+C` to break out of Sunpyter, and use
 
 to get more details on the specific error.
 
+## Sunpyter is breaking for me and want to create an SSH tunnel by hand
+
+Providing a complete guide to this in an FAQ is hard
+(which is why we try to use Sunpyter
+rather than walking you through the length tunnel process),
+but the basic steps that you need to do:
+
+- Start a job on SUNBIRD on one of the CDT nodes
+- Start Jupyter inside this job,
+  on the compute node
+- Note the node name the job is running on
+  (e.g. `scs0151`),
+  and the port that Jupyter says it is listening on
+  (e.g. `8892`)
+- Create a `LocalForward` SSH tunnel between a free port on your machine
+  (e.g. 8895)
+  and the Jupyter port on the compute node.
+  This will look something like:
+
+  ```
+  ssh -J z.your.username@sa2c-backup.swansea.ac.uk -J z.your.username@sunbird.swansea.ac.uk -L8895:localhost:8892 scs0151
+  ```
+- Point your browser at e.g. `https://localhost:8895`
+- Once you are finished,
+  terminate the job running on SUNBIRD.
+
+All of these steps are done automatically by Sunpyter,
+so you might try reading through the source code to see exactly how it does each.
