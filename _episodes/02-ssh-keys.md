@@ -77,6 +77,11 @@ $ ssh-copy-id -i ~/.ssh/id_rsa your.scw.username@sa2c-backup.swansea.ac.uk
 ~~~
 {: .language-bash}
 
+> If your `ssh-keygen` offers to create `id_ed25519` instead,
+> then first press `Ctrl+C`,
+> and check if that file already exists before continuing.
+{: .callout}
+
 Replace `your.scw.username` with the username you noted down from My Supercomputing Wales. You will be prompted for the password for the private key, then to confirm that you want to connect to the machine, and then the Supercomputing Wales password that you just set. You will be temporarily locked out if you enter the wrong password (or username) too many times in a row, so if you get an "Invalid password" message then stop and raise a hand/talk to a helper.
 
 All being well, you will get a message saying that the public key has been copied. To test that this has worked, we can try using it to log in, but first we need to unlock our private key. We do this using an SSH Agent.
@@ -90,7 +95,7 @@ $ ssh-add ~/.ssh/id_rsa
 When prompted, enter the password for your private key. This then stores the key in memory, so that you can use it without entering your password every time. To test that this has worked, try:
 
 ~~~
-$ ssh your.scw.username@sa2c-backup2.swansea.ac.uk
+$ ssh your.scw.username@sa2c-backup.swansea.ac.uk
 ~~~
 {: .language-bash}
 
@@ -104,7 +109,7 @@ you can connect from the VPN.
 However,
 for our purposes,
 it's convenient to bounce our connection to SUNBIRD via
-the `sa2c-backup2` machine we logged into above.
+the `sa2c-backup` machine we logged into above.
 
 To set up our SSH client to do this,
 we can edit our SSH configuration by running,
@@ -119,8 +124,8 @@ Add the following block to the file,
 replacing `your.scw.username` as appropriate:
 
 ~~~
-Host sa2c-backup2 sa2c-backup2.swansea.ac.uk
-    HostName sa2c-backup2.swansea.ac.uk
+Host sa2c-backup sa2c-backup.swansea.ac.uk
+    HostName sa2c-backup.swansea.ac.uk
     User your.scw.username
     IdentityFile ~/.ssh/id_rsa
 
@@ -128,7 +133,7 @@ Host sunbird sunbird.swansea.ac.uk
     HostName sunbird.swansea.ac.uk
     User your.scw.username
     IdentityFile ~/.ssh/id_rsa
-    ProxyJump sa2c-backup2
+    ProxyJump sa2c-backup
 ~~~
 {: .output}
 
