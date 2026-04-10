@@ -137,6 +137,10 @@ Host sunbird sunbird.swansea.ac.uk
 ~~~
 {: .output}
 
+> If your SSH key was instead called `id-ed25519`,
+> then use this in place of `id_rsa` here.
+{: .callout}
+
 Use `Ctrl+O`, `Enter`, `Ctrl+X` to save and exit `nano`.
 
 > ## Multiple sessions
