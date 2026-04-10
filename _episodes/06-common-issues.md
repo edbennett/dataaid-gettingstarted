@@ -42,6 +42,14 @@ Use `Ctrl+C` to break out of Sunpyter, and use
 
 to get more details on the specific error.
 
+Another thing to check is to log in to SUNBIRD and run `squeue --me`.
+If you see multiple jobs labeled `SUNPYTER`,
+then the problem is that you have a dangling Sunpyter instance.
+To avoid accidentally consuming all the resources on the system,
+only one Sunpyter job is allowed to run at a time.
+Use `scancel [jobid]` to kill all `SUNPYTER` jobs in the queue
+and restart Sunpyter.
+
 ## Sunpyter is breaking for me and want to create an SSH tunnel by hand
 
 Providing a complete guide to this in an FAQ is hard
